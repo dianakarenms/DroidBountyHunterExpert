@@ -12,6 +12,15 @@
     <string name="campo_nombre">Nombre del Fugitivo</string>
     <string name="title_activity_agregar">Nuevo Fugitivo</string>
     <string name="title_activity_detalle">Detalle Fugitivo</string>
+    <string name="menu_log">Log de Eliminación</string>
+    <string name="add_webservice">Add WebService</string>
+
+    <string name="boton_foto">Tomar Foto</string>
+    <string name="boton_agregarxml">Add XML</string>
+    <string name="progreso">Progreso...</string>
+    <string name="btn_OpenGL">OpenGL</string>
+    <string name="distorcion_sup">Distorción Superior</string>
+    <string name="distorcion_inf">Distorción Inferior</string>
 </resources>
 
 

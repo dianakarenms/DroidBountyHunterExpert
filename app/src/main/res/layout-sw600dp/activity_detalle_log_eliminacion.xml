@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/fragmentLogEliminacion"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:name="training.edu.fragment.LogEliminacion"
+        tools:layout="@layout/fragment_list_log_eliminacion"/>
+
+    <fragment
+        android:id="@+id/fragmentDetalleLogEliminacion"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:name="training.edu.fragment.DetalleLogEliminacion"
+        tools:layout="@layout/fragment_detalle_log_de_eliminacion"/>
+
+</LinearLayout>

@@ -6,4 +6,10 @@
         android:orderInCategory="100"
         android:title="@string/menu_agregar"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_logeliminacion"
+        android:orderInCategory="100"
+        android:title="@string/menu_log"
+        app:showAsAction="never" />
 </menu>

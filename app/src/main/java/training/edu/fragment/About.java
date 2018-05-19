@@ -16,6 +16,7 @@ import training.edu.droidbountyhunter.R;
  */
 
 public class About extends Fragment {
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,

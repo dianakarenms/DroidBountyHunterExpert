@@ -1,33 +1,33 @@
 package training.edu.droidbountyhunter;
 
 import android.content.Intent;
-import android.support.design.widget.TabLayout;
+import android.os.Bundle;
+import android.provider.Settings;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import training.edu.data.DBProvider;
 import training.edu.fragment.About;
 import training.edu.models.Fugitivo;
+import training.edu.services.ServicioNotificaciones;
 
 public class Home extends AppCompatActivity {
 
@@ -47,10 +47,15 @@ public class Home extends AppCompatActivity {
      */
     private ViewPager mViewPager;
 
+    public static String UDID;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        // Se obtiene el ID del dispositivo...
+        UDID = Settings.Secure.getString(this.getContentResolver(), Settings.Secure.ANDROID_ID);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -74,6 +79,9 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        if(!ServicioNotificaciones.isRunning())
+            startService(new Intent(Home.this, ServicioNotificaciones.class));
+
     }
 
 
@@ -86,17 +94,25 @@ public class Home extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent = null;
         if (item.getItemId() == R.id.menu_agregar) {
-            Intent intent = new Intent(this, Agregar.class);
-            startActivity(intent);
-            return true;
+            intent = new Intent(this, Agregar.class);
+        } else if(item.getItemId() == R.id.menu_logeliminacion) {
+            intent = new Intent(this, LogEliminacion.class);
         }
-
+        startActivityForResult(intent, 0);
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        UpdateLists(resultCode);
     }
 
     public void UpdateLists(int index){
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        mViewPager.setCurrentItem(index);
     }
 
 
@@ -109,7 +125,7 @@ public class Home extends AppCompatActivity {
          * The fragment argument representing the section number for this
          * fragment.
          */
-        private static final String ARG_SECTION_NUMBER = "section_number";
+        private static final String ARG_SECTION_NUMBER = "mode";
         private static final String ARG_SECTION_TEXT = "section_text";
 
         public ListFragment() {
@@ -120,10 +136,8 @@ public class Home extends AppCompatActivity {
             // Se hace referencia al Fragment generado por XML en los Layouts y
             // se instancia en una View...
             View view = inflater.inflate(R.layout.fragment_list, container, false);
-
-            String[] data = new String[6];
             Bundle args = this.getArguments();
-            final int mode = args.getInt("mode");
+            final int mode = args.getInt(ListFragment.ARG_SECTION_NUMBER);
 
             final ListView list = (ListView) view.findViewById(R.id.lista);
             UpdateList(list, mode);
@@ -137,10 +151,10 @@ public class Home extends AppCompatActivity {
                     intent.putExtra("title", fugitivo.getName());
                     intent.putExtra("mode", mode);
                     intent.putExtra("id", fugitivo.getId());
+                    intent.putExtra("photo", fugitivo.getPhoto());
                     startActivityForResult(intent,mode);
                 }
             });
-
             return view;
         }
 
@@ -179,9 +193,9 @@ public class Home extends AppCompatActivity {
                 if (position < 2){
                     fragments[position] = new ListFragment();
                     Bundle arguments = new Bundle();
-                    arguments.putInt("mode",position);
+                    arguments.putInt("mode", position);
                     fragments[position].setArguments(arguments);
-                }else {
+                } else {
                     fragments[position] = new About();
                 }
             }

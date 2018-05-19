@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "961495737515",
+    "firebase_url": "https://droidbountyhunterexpert-42fec.firebaseio.com",
+    "project_id": "droidbountyhunterexpert-42fec",
+    "storage_bucket": "droidbountyhunterexpert-42fec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961495737515:android:c1eb1222c330f5e1",
+        "android_client_info": {
+          "package_name": "training.edu.droidbountyhunter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961495737515-jv5qcc1sv8kp8a3dtlcg7ip8fm0e435k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "training.edu.droidbountyhunter",
+            "certificate_hash": "0956e1fccbb13565a4543708cbf648a0858ffc43"
+          }
+        },
+        {
+          "client_id": "961495737515-imk83sfvoutnaf5virhcipme4t9g81kb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSJ9v4r2Jwer6_4h1y__idx7NVj0z3Rng"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961495737515-imk83sfvoutnaf5virhcipme4t9g81kb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

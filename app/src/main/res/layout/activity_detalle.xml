@@ -1,30 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center|top"
-    android:padding="@dimen/activity_horizontal_margin">
+    android:layout_height="match_parent" >
 
-    <TextView
-        android:id="@+id/mensajeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-        android:text="Mensaje..."/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|top"
+        android:padding="@dimen/activity_horizontal_margin">
 
-    <Button
-        android:id="@+id/buttonCapturar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/boton_capturar"/>
+        <TextView
+            android:id="@+id/mensajeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:text="Mensaje..."/>
 
-    <Button
-        android:id="@+id/buttonEliminar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/boton_eliminar"/>
+        <ImageView
+            android:id="@+id/pictureFugitive"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:maxHeight="200dp"
+            android:maxWidth="200dp"
+            android:minWidth="200dp"
+            android:minHeight="200dp"
+            android:src="@android:drawable/ic_menu_gallery"/>
 
-</LinearLayout>
+        <Button
+            android:id="@+id/buttonCapturar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="OnCaptureClick"
+            android:text="@string/boton_capturar"/>
+
+        <Button
+            android:id="@+id/buttonEliminar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="OnDeleteClick"
+            android:text="@string/boton_eliminar"/>
+
+        <Button
+            android:id="@+id/buttonPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="OnFotoClick"
+            android:text="@string/boton_foto"/>
+
+        <Button
+            android:id="@+id/btnOpenGL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="30dp"
+            android:minWidth="100dp"
+            android:text="@string/btn_OpenGL"
+            android:onClick="opOpenGLClick"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small.Inverse"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/txtDistorcionSup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:inputType="number"
+                android:gravity="center_horizontal"
+                android:ems="10"
+                android:hint="@string/distorcion_sup"
+                android:maxLength="10"
+                android:maxWidth="150dp"
+                android:maxHeight="150dp"/>
+            <EditText
+                android:id="@+id/txtDistorcionInf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:inputType="number"
+                android:gravity="center_horizontal"
+                android:ems="10"
+                android:hint="@string/distorcion_inf"
+                android:maxLength="10"
+                android:maxWidth="150dp"
+                android:maxHeight="150dp"/>
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/cbDefault"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="Imagen Default" />
+
+    </LinearLayout>
+</ScrollView>
