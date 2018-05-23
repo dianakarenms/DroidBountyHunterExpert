@@ -9,7 +9,7 @@
         android:id="@+id/fragmentDetalleLogEliminacion"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="training.edu.fragment.DetalleLogEliminacion"
+        android:name="edu.training.fragment.DetalleLogEliminacion"
         tools:layout="@layout/fragment_detalle_log_de_eliminacion"/>
 
 </LinearLayout>

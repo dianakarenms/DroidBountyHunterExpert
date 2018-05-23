@@ -11,7 +11,7 @@
         android:id="@+id/fragmentLogEliminacion"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="training.edu.fragment.LogEliminacion"
+        android:name="edu.training.fragment.LogEliminacion"
         tools:layout="@layout/fragment_list_log_eliminacion" />
 
 </LinearLayout>

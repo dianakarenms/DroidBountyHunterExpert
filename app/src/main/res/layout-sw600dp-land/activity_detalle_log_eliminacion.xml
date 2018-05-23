@@ -10,7 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:name="training.edu.fragment.LogEliminacion"
+        android:name="edu.training.fragment.LogEliminacion"
         tools:layout="@layout/fragment_list_log_eliminacion"/>
 
     <fragment
@@ -18,7 +18,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:name="training.edu.fragment.DetalleLogEliminacion"
+        android:name="edu.training.fragment.DetalleLogEliminacion"
         tools:layout="@layout/fragment_detalle_log_de_eliminacion"/>
 
 </LinearLayout>

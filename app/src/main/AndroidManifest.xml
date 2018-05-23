@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="training.edu.droidbountyhunter">
+    package="edu.training.droidbountyhunter">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -47,9 +47,9 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-        <service android:name="training.edu.services.ServicioNotificaciones" />
+        <service android:name="edu.training.services.ServicioNotificaciones" />
 
-        <receiver android:name="training.edu.services.Receiver">
+        <receiver android:name="edu.training.services.Receiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
 
@@ -57,16 +57,36 @@
             </intent-filter>
         </receiver>
 
-        <service android:name="training.edu.services.FirebaseService">
+        <service android:name="edu.training.services.FirebaseService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-        <service
-            android:name="training.edu.services.MyFirebaseMessagingService">
+        <service android:name="edu.training.services.MyFirebaseMessagingService">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
+        </service>
+
+        <provider
+            android:name="edu.training.providers.FugitivosContentProvider"
+            android:authorities="edu.training.droidbountyhunter"
+            android:exported="true" />
+
+        <receiver android:name=".FugitivosWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="edu.training.droidbountyhunter.ACTUALIZAR_SEG_WIDGET" />
+                <action android:name="edu.training.droidbountyhunter.ACTUALIZAR_WIDGET" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_configuration" />
+        </receiver>
+        <service
+            android:name="edu.training.services.MessengerService"
+            android:process=":droid_bounty_hunter_process">
         </service>
     </application>
 

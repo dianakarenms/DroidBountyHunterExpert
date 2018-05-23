@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:padding="10dp"
+    android:layout_margin="5dp">
+
+    <LinearLayout
+        android:id="@+id/FrmWidget"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:padding="5dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/lblFugitivoCapturado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="Fugitivo"
+            android:gravity="center"/>
+
+        <ImageView
+            android:id="@+id/imgFoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/lblNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="Texto 2"
+            android:gravity="center"/>
+
+        <Button
+            android:id="@+id/btnCambiar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fugitivo / Capturado"
+            android:textSize="12sp"
+            android:textColor="#000000"/>
+
+    </LinearLayout>
+
+</FrameLayout>

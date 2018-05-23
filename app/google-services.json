@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:961495737515:android:c1eb1222c330f5e1",
         "android_client_info": {
-          "package_name": "training.edu.droidbountyhunter"
+          "package_name": "edu.training.droidbountyhunter"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "961495737515-jv5qcc1sv8kp8a3dtlcg7ip8fm0e435k.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "training.edu.droidbountyhunter",
+            "package_name": "edu.training.droidbountyhunter",
             "certificate_hash": "0956e1fccbb13565a4543708cbf648a0858ffc43"
           }
         },
